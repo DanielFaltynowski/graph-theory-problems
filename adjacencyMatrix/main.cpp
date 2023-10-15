@@ -10,6 +10,7 @@ int setVerticles();
 void setEdge(vector<vector<int> >& adjacencyMatrix, bool directed);
 void deleteVerticle(vector<vector<int> >& adjacencyMatrix, int verticle);
 void deleteEdge(vector<vector<int> >& adjacencyMatrix, bool directed);
+void exportGraph(int verticles, vector<vector<int> >& adjacencyMatrix);
 
 int main()
 {
@@ -17,17 +18,17 @@ int main()
     vector<vector<int> > A(verticles, vector<int>(verticles));
     createAdjacencyMatrix(A, verticles);
     printMatrix(A);
+
     setEdge(A, false);
-    printMatrix(A);
     setEdge(A, false);
-    printMatrix(A);
     setEdge(A, false);
-    printMatrix(A);
-    cout << endl;
-    deleteVerticle(A, 0);
-    printMatrix(A);
-    deleteEdge(A, false);
-    printMatrix(A);
+    setEdge(A, false);
+    setEdge(A, false);
+    setEdge(A, false);
+    setEdge(A, false);
+    setEdge(A, false);
+    setEdge(A, false);
+    exportGraph(verticles, A);
 
     return 0;
 }
@@ -58,15 +59,9 @@ void createAdjacencyMatrix(vector<vector<int> >& adjacencyMatrix, int verticles)
 int setVerticles()
 {
     int verticles;
-//    ofstream File("verticles.txt");
 
     cout << "Enter the number of vertices: " << endl;
     cin >> verticles;
-//    if (File.is_open())
-//    {
-//        File << verticles;
-//        File.close();
-//    }
 
     return verticles;
 }
@@ -122,5 +117,30 @@ void deleteEdge(vector<vector<int> >& adjacencyMatrix, bool directed)
         {
             adjacencyMatrix[out][in] = adjacencyMatrix[out][in] - 1;
         }
+    }
+}
+
+void exportGraph(int verticles, vector<vector<int> >& adjacencyMatrix)
+{
+    ofstream FileVerticles("verticles.txt");
+
+    if (FileVerticles.is_open())
+    {
+        FileVerticles << verticles;
+        FileVerticles.close();
+    }
+
+    ofstream FileEdges("edges.txt");
+
+    if (FileEdges.is_open())
+    {
+        for (int i = 0; i < verticles; i++)
+        {
+            for (int j = 0; j < verticles; j++)
+            {
+                FileEdges << adjacencyMatrix[i][j] << "\n";
+            }
+        }
+        FileEdges.close();
     }
 }
