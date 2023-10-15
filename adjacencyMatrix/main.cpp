@@ -18,6 +18,7 @@ int countMaximalVerticle(vector<int>& results, int verticles);
 int amountOfEvenVerticles(vector<int>& results, int verticles);
 int amountOfOddVerticles(vector<int>& results, int verticles);
 void showMenu();
+void pressAnyKey();
 
 
 int main()
@@ -43,20 +44,26 @@ int main()
         {
             case 1:
                 printMatrix(A);
+                pressAnyKey();
                 break;
             case 2:
+                pressAnyKey();
                 break;
             case 3:
                 setEdge(A, directed);
+                pressAnyKey();
                 break;
             case 4:
                 deleteVerticle(A, verticles);
+                pressAnyKey();
                 break;
             case 5:
                 deleteEdge(A, directed);
+                pressAnyKey();
                 break;
             case 6:
                 exportGraph(verticles, A);
+                pressAnyKey();
                 break;
             case 7:
                 cout << "Statictics of outgoing verticles!" << endl;
@@ -100,11 +107,13 @@ int main()
                     cout << results[i] << " ";
                 }
                 cout << ">" << endl << endl;
+                pressAnyKey();
                 break;
             case 8:
                 return 0;
             default:
                 cout << "You prompted an incorrect number!" << endl << endl;
+                pressAnyKey();
         }
     }
 
@@ -303,4 +312,12 @@ void showMenu()
          << "\n\t6) Export graph"
          << "\n\t7) Show statistics."
          << "\n\t8) Exit." << endl << endl;
+}
+
+void pressAnyKey()
+{
+    string temp;
+    cout << endl << "Press any key to continue!" << endl << endl;
+    getline(cin, temp);
+    getline(cin, temp);
 }

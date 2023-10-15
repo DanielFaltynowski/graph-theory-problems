@@ -13,3 +13,8 @@ One way to represent a graph $G$ with n vertices numbered from $0$ to $n-1$ is b
 Then the adjacency matrix $A$ of graph $G$ would look like this.
 
 <img src="pictures/matrix.png" width="245">
+
+<br>
+
+## Functionality
+
