@@ -39,6 +39,7 @@ int main()
         showMenu();
         int option;
         cin >> option;
+        cout << endl;
 
         switch(option)
         {
