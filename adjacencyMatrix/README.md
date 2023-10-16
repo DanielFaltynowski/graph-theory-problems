@@ -56,9 +56,9 @@ This is the simplest of operations, as it involves updating the data in the adja
 
 In the case of outgoing degrees, we calculate the sum of the numbers in the row corresponding to the vertex, while in the case of incoming degrees, we calculate the sum of the numbers in the column.
 
-$\text{deg}(0)^{-} = 4, \text{deg}(1)^{-} = 3, \text{deg}(2)^{-} = 3, \text{deg}(3)^{-} = 4, \text{deg}(4)^{-} = 2, \text{deg}(5)^{-} = 2$
+$\text{deg}(0)^{-} = 4 \quad \text{deg}(1)^{-} = 3 \quad \text{deg}(2)^{-} = 3 \quad \text{deg}(3)^{-} = 4 \quad \text{deg}(4)^{-} = 2 \quad \text{deg}(5)^{-} = 2$
 
-$\text{deg}(0)^{+} = 4, \text{deg}(1)^{+} = 3, \text{deg}(2)^{+} = 3, \text{deg}(3)^{+} = 4, \text{deg}(4)^{+} = 2, \text{deg}(5)^{+} = 2$
+$\text{deg}(0)^{+} = 4 \quad \text{deg}(1)^{+} = 3 \quad \text{deg}(2)^{+} = 3 \quad \text{deg}(3)^{+} = 4 \quad \text{deg}(4)^{+} = 2 \quad \text{deg}(5)^{+} = 2$
 
 As shown in the above example, the outgoing and incoming degrees for a given vertex in an undirected graph are identical.
 
