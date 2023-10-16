@@ -117,8 +117,6 @@ int main()
                 pressAnyKey();
         }
     }
-
-    return 0;
 }
 
 void printMatrix(vector<vector<int> >& matrix)

@@ -3,11 +3,14 @@ import networkx
 import matplotlib.pyplot as plt
 
 
-def import_number_of_verticles():
+def import_verticles():
     with open('verticles.txt', "r") as FileVerticles:
         verticles = int(FileVerticles.readline())
         FileVerticles.close()
-    return verticles
+    response = []
+    for i in range(verticles):
+        response.append(i)
+    return response
 
 
 def import_edges():
@@ -42,11 +45,15 @@ def create_list_of_edges(adjacency_matrix, verticles):
 
 if __name__ == "__main__":
     if os.path.exists('verticles.txt') and os.path.exists('edges.txt'):
-        n = import_number_of_verticles()
+        verticles = import_verticles()
+        n = len(verticles)
         edges = import_edges()
         A = create_adjacency_matrix(edges, n)
         edges = create_list_of_edges(A, n)
-        G = networkx.Graph(edges)
+        G = networkx.Graph()
+        G.add_nodes_from(verticles)
+        G.add_edges_from(edges)
+
         networkx.draw(G)
         plt.show()
     else:
