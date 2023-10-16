@@ -27,6 +27,12 @@ From the adjacency matrix $A^2$, for example, it follows that there are two path
 
 If there is a path of length two leading from vertex $i$ to vertex $j$, and if vertices $i$ and $j$ are adjacent, then there exists a subgraph isomorphic to cycle $C_3$. Additionally, assuming the above, if there is a vertex $v$ adjacent to vertices $i$ and $j$, then graph $G$ contains a triangle (cycle $C_3$) $i \rightarrow j \rightarrow v \rightarrow i$.
 
+<br>
+
+## Solution
+
+There are two approaches to solving this problem. The first one (referred to as naive) involves matrix multiplication using the Gauss-Jordan method and is more commonly used by novice programmers. Unfortunately, the cost of this operation is quite high, as it is $\mathcal{O}(n^3)$. The second approach utilizes more efficient matrix multiplication with the Strassen algorithm, which reduces the computational complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^{\lg{7}})$.
+
 
 
 
