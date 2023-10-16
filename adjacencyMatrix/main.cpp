@@ -24,6 +24,7 @@ void pressAnyKey();
 int main()
 {
     int verticles = setVerticles();
+    int number;
     bool directed;
     vector<int> results;
 
@@ -51,7 +52,12 @@ int main()
                 pressAnyKey();
                 break;
             case 3:
-                setEdge(A, directed);
+                cout << "How many edges do you want to add?:" << endl;
+                cin >> number;
+                for (int i = 0; i < number; i++)
+                {
+                    setEdge(A, directed);
+                }
                 pressAnyKey();
                 break;
             case 4:
