@@ -2,13 +2,13 @@
 
 <br>
 
-A **cycle** is a graph in which each vertex has a degree of two. A cycle with $n$ vertices is denoted as $C_n$. On the other hand, a **triangle** is referred to as cycle $C_3$, which is a cycle containing three vertices.
+A **cycle** is a undirected graph in which each vertex has a degree of two. A cycle with $n$ vertices is denoted as $C_n$. On the other hand, a **triangle** is referred to as cycle $C_3$, which is a cycle containing three vertices.
 
 <br>
 
 ## Problem description
 
-The goal is to find a triangle $C_3$ in the graph $G$. For the given graph, potential cycles could be the paths:
+The goal is to find a triangle $C_3$ in the undirected graph $G$. For the given graph, potential cycles could be the paths:
 
 * $0 \rightarrow 1 \rightarrow 2 \rightarrow 0$,
 * $0 \rightarrow 2 \rightarrow 3 \rightarrow 0$,
