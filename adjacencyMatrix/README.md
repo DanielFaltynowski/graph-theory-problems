@@ -22,36 +22,69 @@ To run the project, navigate to the `adjacencyMatrix` folder in the console wind
 
 <br>
 
-## Function overview
+## Mathematical interpretation of  operations
 
-Below, I describe the operation of individual functions in the program.
+### Undirected graph
 
-<br>
+If the graph is undirected, then $A_{ij} = A_{ji}$.
 
-### printMatrix
+### Adding a vertex
 
-The function's task is to display the current adjacency matrix $A$ stored in the program's temporary memory. The program sequentially displays all rows in $\Theta(n^2)$ time.
+When adding a vertex, we expand the adjacency matrix $A$ with an additional row and column filled with zeros.
 
-### createAdjacencyMatrix
+<img src="pictures/graph2.png" width="350">
 
-The function fills the matrix with zeros at a cost of $\Theta(n^2)$.
+<img src="pictures/matrix2.png" width="275">
 
-### setVerticles
+The computational complexity of this operation is very high because it involves allocating all the rows to increase it by one and adding an entire new row in memory.
 
-The function sets the number of vertices in the graph.
+### Deleting a vertex
 
-### setEdge
+To remove a vertex, you need to delete the row and column corresponding to it in the adjacency matrix $A$. In our example, let's remove the vertex with number 3.
 
-The function creates an edge from vertex $v_1$ to vertex $v_2." This involves updating the existing adjacency matrix with new data.
+<img src="pictures/graph3.png" width="250">
 
-### deleteVerticle
+<img src="pictures/matrix3.png" width="245">
 
-The function sequentially removes the row and then the column corresponding to the specified vertex. To do this, I use the built-in `erase()` function of the `vector<int>` structure. The computational complexity depends on the vertex being removed; however, in the case of removing elements from the middle of the vector, the computational complexity is very high.
+Similar to adding a vertex, the computational complexity is very high.
 
-### deleteEdge
+### Adding and removing edges
 
-The sole task of the function is to update the existing data in the adjacency matrix.
+This is the simplest of operations, as it involves updating the data in the adjacency matrix $A$ in constant time $\mathcal{O}(1)$.
 
-### exportGraph
+### Calculating the vertex degree
 
-The function writes the number of vertices to the 'vertices.txt' file and edge data to the 'edges.txt' file. The computational complexity is $\Theta(n^2)$ because the function iterates through the entire adjacency matrix.
+In the case of outgoing degrees, we calculate the sum of the numbers in the row corresponding to the vertex, while in the case of incoming degrees, we calculate the sum of the numbers in the column.
+
+$deg^{-}(0) = 4$
+
+$deg^{-}(1) = 3$
+
+$deg^{-}(2) = 3$
+
+$deg^{-}(3) = 4$
+
+$deg^{-}(4) = 2$
+
+$deg^{-}(5) = 2$
+
+$deg^{+}(0) = 4$
+
+$deg^{+}(1) = 3$
+
+$deg^{+}(2) = 3$
+
+$deg^{+}(3) = 4$
+
+$deg^{+}(4) = 2$
+
+$deg^{+}(5) = 2$
+
+As shown in the above example, the outgoing and incoming degrees for a given vertex in an undirected graph are identical.
+
+The computational complexity of this operation is $\mathcal{O}(n)$.
+
+
+
+
+
