@@ -14,3 +14,16 @@ then
     python3.11 print_graph.py
   fi;
 fi;
+
+if [ -e 'verticles.txt' ]
+then
+  rm -r verticles.txt
+fi;
+if [ -e 'edges.txt' ]
+then
+  rm -r edges.txt
+fi;
+if [ -e 'main.exe' ]
+then
+  rm -r main.exe
+fi;
