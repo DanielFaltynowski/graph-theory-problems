@@ -16,12 +16,6 @@ Then the adjacency matrix $A$ of graph $G$ would look like this.
 
 <br>
 
-## How to run the project
-
-To run the project, navigate to the `adjacencyMatrix` folder in the console window and use the command `bash start.sh`.
-
-<br>
-
 ## Mathematical interpretation of  operations
 
 ### Undirected graph

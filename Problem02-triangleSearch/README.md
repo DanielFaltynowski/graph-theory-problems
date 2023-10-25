@@ -34,14 +34,3 @@ If there is a path of length two leading from vertex $i$ to vertex $j$, and if v
 There are two approaches to solving this problem. The first one (referred to as naive) involves matrix multiplication using the Gauss-Jordan method and is more commonly used by novice programmers. Unfortunately, the cost of this operation is quite high, as it is $\mathcal{O}(n^3)$. The second approach utilizes more efficient matrix multiplication with the Strassen algorithm, which reduces the computational complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^{\lg{7}}) \approx \mathcal{O}(n^{2,81})$.
 
 
-
-
-
-
-
-
-
-
-
-
-
