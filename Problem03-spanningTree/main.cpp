@@ -214,21 +214,38 @@ void spanningTree(vector<vector<int> > adjacencyMatrix, int verticles)
 
     dfs(adjacencyMatrix, verticles, 0, visited, spanningTree);
 
-    for (int i = 0; i < spanningTree.size(); i++)
-    {
-        cout << spanningTree[i] << " ";
-    }
-    cout << endl << endl;
-
-    ofstream FileSpanningTree("spanningTree.txt");
-
-    if (FileSpanningTree.is_open())
+    if ((spanningTree.size() / 2) == verticles - 1)
     {
         for (int i = 0; i < spanningTree.size(); i++)
         {
-            FileSpanningTree << spanningTree[i] << "\n";
+            if (i == spanningTree.size() - 1)
+            {
+                cout << spanningTree[i] << ")";
+            }
+            else if (i % 2 == 0)
+            {
+                cout << "(" << spanningTree[i] << ", ";
+            }
+            else {
+                cout << spanningTree[i] << "), ";
+            }
+//            cout << spanningTree[i] << " ";
         }
-        FileSpanningTree.close();
+        cout << endl << endl;
+
+        ofstream FileSpanningTree("spanningTree.txt");
+
+        if (FileSpanningTree.is_open())
+        {
+            for (int i = 0; i < spanningTree.size(); i++)
+            {
+                FileSpanningTree << spanningTree[i] << "\n";
+            }
+            FileSpanningTree.close();
+        }
+    }
+    else {
+        cout << "Graph is not connected." << endl << endl;
     }
 }
 
